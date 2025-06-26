@@ -1,35 +1,33 @@
 // app/about/page.tsx
 
+import Link from "next/link";
+
 export default function AboutPage() {
   return (
-    <main className="max-w-4xl mx-auto px-4 py-12">
-      <h1 className="text-3xl font-bold mb-6 text-blue-700">About Me</h1>
+    <section className="min-h-screen flex items-center justify-center bg-[#1f2a44] text-white px-4">
+      <div className="bg-[#1f2a44] max-w-2xl w-full text-center p-10 rounded-lg shadow-lg space-y-6">
+        {/* Circle Initial */}
+        <div className="w-16 h-16 mx-auto flex items-center justify-center rounded-full border-2 border-green-500 text-green-500 text-2xl font-bold">
+          R
+        </div>
 
-      <p className="text-gray-700 mb-4 text-sm leading-relaxed">
-        I’m Himanshu Gautam, a passionate Full Stack Developer based in Hyderabad, India, with over 7 years
-        of experience in building enterprise-grade applications using technologies like .NET, Angular, Azure,
-        and Databricks.
-      </p>
+        {/* About Text */}
+        <p className="text-sm leading-relaxed text-gray-300">
+          I’M A PARAGRAPH. CLICK HERE TO ADD YOUR OWN TEXT AND EDIT ME.
+          IT’S EASY. JUST CLICK “EDIT TEXT” OR DOUBLE CLICK ME TO ADD YOUR
+          OWN CONTENT AND MAKE CHANGES TO THE FONT. FEEL FREE TO DRAG
+          AND DROP ME ANYWHERE YOU LIKE ON YOUR PAGE.
+        </p>
 
-      <p className="text-gray-700 mb-4 text-sm leading-relaxed">
-        I specialize in developing scalable microservices, data pipelines, and frontend UIs with a focus on
-        performance and user experience. I’ve built tools that improve audit monitoring, cut report latency,
-        and handle millions of records through cloud-native solutions.
-      </p>
-
-      <h2 className="text-2xl font-semibold text-blue-600 mt-10 mb-2">Education</h2>
-      <ul className="text-sm text-gray-700 list-disc list-inside">
-        <li>M.Tech in Software Technology – VIT Vellore, 2015</li>
-        <li>B.Tech in Computer Science – Rajasthan Technical University, 2013</li>
-      </ul>
-
-      <h2 className="text-2xl font-semibold text-blue-600 mt-10 mb-2">Quick Highlights</h2>
-      <ul className="text-sm text-gray-700 list-disc list-inside">
-        <li>7+ years of experience with .NET, Angular, Azure</li>
-        <li>Built and deployed solutions for Deloitte, HP, Grant Thornton</li>
-        <li>Designed large-scale data pipelines in Azure Databricks</li>
-        <li>Mentored junior devs and led code reviews</li>
-      </ul>
-    </main>
+        {/* Download Resume Button */}
+        <Link
+          href="/himanshu_resume.pdf" // Place the PDF in public/ folder
+          download
+          className="inline-block border border-green-500 px-6 py-2 text-green-500 hover:bg-green-500 hover:text-black transition duration-200"
+        >
+          DOWNLOAD RESUME
+        </Link>
+      </div>
+    </section>
   );
 }
